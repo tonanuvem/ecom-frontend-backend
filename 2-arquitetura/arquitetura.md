@@ -39,7 +39,7 @@ Gere diagramas mermaid para:
 - Deployment
 
 ## Formato de Saída
-Gere 2-genai-arquitetura.md incluindo:
+Gere o arquivo "2-genai-arquitetura.md" incluindo:
 - Documentação da Arquitetura da Solução
 - Diagramas em sintaxe mermaid
 - Topologia identificando os microsserviços da solução
