@@ -30,9 +30,7 @@
 
 ### Fluxos de usuário completos:
 - Registro e primeiro login
-- Criar primeira postagem
-- Seguir outro usuário e ver posts no feed
-- Atualizar perfil e biografia
+- Criar registros
 - Navegação entre diferentes seções da aplicação
 - Teste de carga
 
@@ -48,7 +46,7 @@ Frontend e Backend:
 ## Formato de saída:
 
 - Os testes unitários devem ficar dentro de cada componente
-- Os testes de integração e de interface do usuário (E2E) devem ser criados na pasta "3-genai-testes" que reprenta um projeto independente a ser mantido pela equipe de QA.
+- Os testes de integração e de interface do usuário (E2E) devem ser criados na pasta "testes_integracao" que reprenta um projeto independente a ser mantido pela equipe de QA.
 - Usar Docker Compose para possibilidar um ambiente de teste completo
 - Propor os arquivos necessários para usar o GitHub Actions como ferramenta de CI/CD automatizado
 
