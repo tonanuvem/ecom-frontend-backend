@@ -49,6 +49,13 @@ Para cada funcionalidade do sistema, detalhe:
 
 ### 2. Requisitos Não Funcionais
 
+Para cada funcionalidade do sistema, detalhe:
+
+- **Identificador único (NAO-FUNC-XX)**
+- **Descrição clara e objetiva**
+- **Regras de negócio aplicáveis**
+- **Critérios de aceite**
+
 #### 2.1 Performance
 - Tempo de resposta
 - Capacidade de processamento
