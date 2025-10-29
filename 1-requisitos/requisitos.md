@@ -91,7 +91,7 @@ Para cada funcionalidade do sistema, detalhe:
 - Orçamentárias
 
 ## Formato de Saída
-Gere o arquivo 1-genai-requisitos.md incluindo:
+Gere o arquivo "1-genai-requisitos.md" incluindo:
 - Diagramas em sintaxe mermaid
 - Justificativas técnicas
 - Referencias a decisões
