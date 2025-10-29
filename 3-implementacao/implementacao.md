@@ -54,6 +54,7 @@ Implementar uma solução de E‑commerce baseada em microserviços, com um **fr
 - Containerização: Docker + Kubernetes (k8s) para orquestração
 
 ### 6. Deploy, Infraestrutura, Observability e Operação
+- Criar script para executar toda a solução
 - Deploy em Kubernetes e docker-compose.
 - Separar ambientes: dev / staging / prod.
 - Criar pipelines CI/CD para cada ambiente.
@@ -77,6 +78,7 @@ Implementar uma solução de E‑commerce baseada em microserviços, com um **fr
     /docker-compose
       /singlenode
       /swarm
+  /scripts
   /testes_integracao
 ```
 
