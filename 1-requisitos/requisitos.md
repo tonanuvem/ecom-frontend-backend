@@ -24,7 +24,7 @@ Sua missão é realizar melhorar o desenho da solução com levantamento complet
 - Com base no Cenários de Testes e uso de Behavior Driven Development, propor melhorias nas validações necessárias e construir proposta com exemplos concretos usando Gherkin?
 
 ### 4. Projeto da Solução
-- Com base no projeto, propor melhorias na identificação de quais são os microsserviços que devem compor a solução ?
+- Com base no projeto e o uso de Domain Driven Design, propor melhorias na identificação de quais são os microsserviços que devem compor a solução ?
 - Como medir o sucesso do projeto?
 - Quais métricas são importantes?
 
