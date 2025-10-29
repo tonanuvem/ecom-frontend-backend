@@ -33,7 +33,7 @@ Caso não tenha o arquivo PROJETO.TXT na pasta, interromper o processamento e so
 
 ## Instruções para Análise
 
-### 1. Requisitos Funcionais através de User Stories
+### 1. UTILIDADE: Requisitos Funcionais através de User Stories
 
 Para cada funcionalidade do sistema, detalhe:
 
@@ -47,7 +47,7 @@ Para cada funcionalidade do sistema, detalhe:
 - **Regras de negócio aplicáveis**
 - **Critérios de aceite**
 
-### 2. Requisitos Não Funcionais
+### 2. GARANTIA: Requisitos Não Funcionais
 
 Para cada funcionalidade do sistema, detalhe:
 
