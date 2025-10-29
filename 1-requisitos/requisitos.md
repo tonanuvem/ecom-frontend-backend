@@ -31,11 +31,11 @@ Sua missão é realizar melhorar o desenho da solução com levantamento complet
 
 ## Instruções para Análise
 
-### 1. Requisitos Funcionais
+### 1. Requisitos Funcionais através de User Stories
 
 Para cada funcionalidade do sistema, detalhe:
 
-- **Identificador único (RF-XX)**
+- **Identificador único (FUNC-XX)**
 - **Descrição clara e objetiva**
 - **Atores envolvidos**
 - **Pré-condições**
@@ -92,6 +92,8 @@ Para cada funcionalidade do sistema, detalhe:
 
 ## Formato de Saída
 Gere o arquivo "1-genai-requisitos.md" incluindo:
+- Resumo Executivo
+- Objetivos
 - Diagramas em sintaxe mermaid
 - Justificativas técnicas
 - Referencias a decisões
