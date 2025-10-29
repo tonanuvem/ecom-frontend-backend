@@ -34,9 +34,10 @@ Você é um Arquiteto de Software experiente. Sua missão é documentar a arquit
 Gere diagramas mermaid para:
 - Arquitetura geral
 - Fluxo de dados
-- Componentes
+- Componentes do Front end
+- Componentes de cada Back end
 - Sequências principais
-- Deployment
+- Implantação usando conteineres com alta disponibilidade
 
 ## Formato de Saída
 Gere o arquivo "2-genai-arquitetura.md" incluindo:
