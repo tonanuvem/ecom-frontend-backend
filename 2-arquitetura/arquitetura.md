@@ -40,8 +40,8 @@ Gere diagramas mermaid para:
 - Fluxo de dados
 - Componentes do Front end
 - Componentes de cada Back end
-- Sequências principais
-- Implantação usando conteineres com alta disponibilidade
+- Plano resumido com etapas sequencias que devem ser seguidas durante e implementação do código
+- Topologia com ambientes para Implantação usando conteineres com alta disponibilidade
 
 ## Formato de Saída
 Gere o arquivo "2-genai-arquitetura.md" incluindo:
