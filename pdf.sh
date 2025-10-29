@@ -3,7 +3,7 @@
 # ♿ pdf2md_accessible_flex.sh
 # Converte PDF → Markdown acessível (.md)
 # Detecta automaticamente se o PDF tem texto, imagens ou ambos.
-# Usa Pandoc + BLIP (visão computacional local) conforme necessário.
+# Usa pdftotext + BLIP (visão computacional local) conforme necessário.
 #
 
 set -e
@@ -44,23 +44,20 @@ echo "🔍 Verificando se o PDF contém texto..."
 TEMP_TXT=$(mktemp)
 pdftotext "$PDF" "$TEMP_TXT" 2>/dev/null
 CHAR_COUNT=$(wc -c < "$TEMP_TXT")
-rm -f "$TEMP_TXT"
 
 # ============================================================
 # CASO 1: PDF com texto e/ou imagens
 # ============================================================
 if [ "$CHAR_COUNT" -gt 50 ]; then
-    echo "✅ PDF contém texto. Convertendo via Pandoc..."
-    if ! command -v pandoc &> /dev/null; then
-        echo "⬇️ Instalando pandoc..."
-        sudo apt update && sudo apt install -y pandoc
-    fi
+    echo "✅ PDF contém texto. Extraindo conteúdo com pdftotext..."
 
-    pandoc "$PDF" -t markdown -o "$OUTPUT"
+    # Converte para texto
+    pdftotext "$PDF" - | sed '/^[[:space:]]*$/d' > "$OUTPUT"
 
-    # Extração e descrição de imagens
+    # Extrai imagens
     extract_images
 
+    # Se tiver imagens, adiciona descrições automáticas
     if ls "${BASENAME}_images"/*.png >/dev/null 2>&1; then
         install_dependencies
 
@@ -77,11 +74,6 @@ model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-capt
 
 img_dir = os.getenv("IMG_DIR")
 md_path = os.getenv("MD_FILE")
-
-lines = []
-if os.path.exists(md_path):
-    with open(md_path, "r", encoding="utf-8") as f:
-        lines = f.readlines()
 
 with open(md_path, "a", encoding="utf-8") as f:
     f.write("\n\n---\n\n## 🖼️ Descrições automáticas de imagens\n\n")
@@ -152,6 +144,4 @@ with open(output_md, "w", encoding="utf-8") as f:
 print(f"✅ Markdown acessível gerado: {output_md}")
 EOF
 
-    python3 "$PY_SCRIPT" "$PDF"
-    rm -f "$PY_SCRIPT"
-fi
+    python3 "$PY_SCRIPT" "$PD_
