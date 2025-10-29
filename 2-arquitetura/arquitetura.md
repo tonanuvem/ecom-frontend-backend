@@ -43,7 +43,9 @@ Gere diagramas mermaid para:
 Gere o arquivo "2-genai-arquitetura.md" incluindo:
 - Documentação da Arquitetura da Solução
 - Diagramas em sintaxe mermaid
-- Topologia identificando os microsserviços da solução
-- Proposta da estrutura de dados (incluindo sugestão de tabelas e seus respectivos campos) de cada microsserviço 
+- Topologia identificando os microsserviços da solução e uso da arquitetura hexagonal
+- Proposta da estrutura de dados (incluindo sugestão de tabelas e seus respectivos campos) de cada microsserviço
+- Identificação de foreign keys entre os vários microsserviços
+- Identificar necessidade de transações com base no padrão de projeto SAGA
 - Justificativas técnicas
 - Referencias a decisões
