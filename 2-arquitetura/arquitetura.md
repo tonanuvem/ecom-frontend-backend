@@ -24,14 +24,14 @@ Caso não encontre o arquivo 1-GENAI-REQUISITOS.MD, interromper o processamento 
 
 ### 3. Integrações
 - Examine configurações de API
-- Identifique serviços externos
+- Identifique serviços externos e proponha ferramentas de terceiros, priorizando projetos open source
 - Verifique mecanismos de autenticação
 - Documente fluxos de dados
 
 ### 4. Decisões Técnicas
 - Examine e descreva o uso de padrões de projetos aplicáveis
 - Verifique escolhas de tecnologia e possibilidade do uso de ferramentas open source
-- Identifique trade-offs realizados
+- Identifique custo versus beneficios das decisões sugeridas
 - Documente justificativas
 
 ### 5. Diagramas
