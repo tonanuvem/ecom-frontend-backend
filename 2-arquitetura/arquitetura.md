@@ -41,10 +41,13 @@ Gere diagramas mermaid para:
 
 ## Formato de Saída
 Gere o arquivo "2-genai-arquitetura.md" incluindo:
-- Documentação da Arquitetura da Solução
+- Documentação da Arquitetura da Solução com Visão Geral dos Componentes
 - Diagramas em sintaxe mermaid
+- Domain Storytelling (texto)
+- Cenários de Teste (BDD — Gherkin) baseado no Domain Storytellin
 - Topologia identificando os microsserviços da solução e uso da arquitetura hexagonal
-- Proposta da Modelos de Dados simplificado (incluindo sugestão de tabelas e seus respectivos campos) de cada microsserviço
+- Principais Microserviços e Endpoints (exemplos REST)
+- Proposta da Modelos de Dados simplificado (incluindo sugestão de tabelas ou json e seus respectivos campos) de cada microsserviço
 - Identificação de foreign keys entre os vários microsserviços
 - Identificar necessidade de transações com base no padrão de projeto SAGA
 - Justificativas técnicas
