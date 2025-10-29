@@ -105,6 +105,7 @@ Gere o arquivo "1-genai-requisitos.md" incluindo:
 ### Formato de Documentação
 
 - Use linguagem clara e objetiva
+- Usar termos e nomes em português e colocar entre parenteses o termo em ingles quando for relevante
 - Evite ambiguidades
 - Mantenha consistência na nomenclatura
 - Inclua exemplos quando necessário
