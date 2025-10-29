@@ -13,8 +13,10 @@ Caso não encontre os arquivos, interromper o processamento e confirmar com o Al
 Implementar uma solução de E‑commerce baseada em microserviços, com um **frontend web** (SPA) consumindo vários backends especializados. A arquitetura foca em escalabilidade, independência de implantação, observabilidade e facilidade de teste.
 
 ### 2. Objetivos
-- Fornecer uma loja online responsiva para clientes.
+- Fornecer funcionalidade responsiva aos usuários.
 - Separar responsabilidades por domínio.
+- Implementar usando pouco código e simples de entender
+- Inserir explicações no próprio código através de comentários
 - Permitir deploy independente e escalonamento por serviço.
 - Garantir segurança (autenticação/autorização) e resiliência (retry, circuit breaker).
 - Facilitar integração entre frontend e APIs via HTTP/REST (ou GraphQL quando aplicável).
@@ -22,11 +24,11 @@ Implementar uma solução de E‑commerce baseada em microserviços, com um **fr
 ### 3. Principais Microserviços com Endpoints (REST) e também consumindo Eventos
 
 - Criar todos os microsserviços com OpenAPI/Swagger.
-- Eventos (order:created, payment:confirmed) permitem comunicação assíncrona e desacoplada.
+- Usar Eventos para comunicação assíncrona e desacoplada.
 - Os mesmos campos do JSON passados em chamadas síncronas também podem estar disponíveis para serem usados em chamadas assíncronas.
-- Criar cenários de Teste (BDD — Gherkin) para comunicações síncronas e assíncronas
-- Implementar Modelos de Dados de cada componente e documentar através de comentários em cada código 
-- Criar scripts de inicialização dos dados nos respectivos bancos de dados
+- Criar cenários de Teste de integração (BDD — Gherkin) para comunicações síncronas e assíncronas
+- Implementar Modelos de Dados simples de cada componente e documentar através de comentários em cada código 
+- Criar scripts simples de inicialização dos dados nos respectivos bancos de dados
 
 ### 4. Integração Frontend ↔ Backend (padrões e boas práticas)
 - Frontend chama o **API Gateway** (ex: `/api/*`), que faz roteamento para os microserviços.
@@ -75,6 +77,7 @@ Implementar uma solução de E‑commerce baseada em microserviços, com um **fr
     /docker-compose
       /singlenode
       /swarm
+  /testes_integracao
 ```
 
 ## Conclusão
