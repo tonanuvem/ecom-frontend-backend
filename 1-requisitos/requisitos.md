@@ -7,6 +7,8 @@ Sua missão é realizar melhorar o desenho da solução com levantamento complet
 
 ## Leia o documento PROJETO.TXT e IMAGENS (jpg, svg) desta pasta para fazer sua Análise
 
+Caso não tenha o arquivo PROJETO.TXT na pasta, interromper o processamento e solicitar que o Aluno faça o upload.
+
 ### 1. Objetivo do Sistema considerando o Relato do Problema
 - Qual o propósito principal e o objetivo estratégico a ser atendido?
 - Quais problemas resolve?
