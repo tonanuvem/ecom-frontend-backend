@@ -1,0 +1,73 @@
+Solução E-Commerce seguindo estrutura dos 6 Tópicos do Trabalho
+
+1)  Relato do Problema O crescimento do comércio eletrônico aumentou a
+    necessidade de lidar com autenticação, catálogo de produtos, pedidos
+    e pagamentos em um ambiente escalável. Soluções monolíticas
+    dificultam manutenção, implantação independente e podem gerar
+    indisponibilidade total quando apenas um módulo apresenta falha.
+
+2)  Proposta de Solução Desenvolver uma plataforma de E-commerce
+    utilizando arquitetura de microserviços, permitindo escalabilidade
+    horizontal, independência de deploy e maior resiliência.
+
+Usuários-alvo: Clientes, administradores e operadores da loja.
+Concorrentes / Referências: Shopify, VTEX, WooCommerce.
+
+3)  Análise de Funcionalidades
+
+-   Cadastro e autenticação de usuários.
+-   Consulta e gerenciamento do catálogo de produtos.
+-   Carrinho e criação de pedidos.
+-   Processamento de pagamentos.
+-   Atualização de status de pedidos e notificações.
+-   Administração do catálogo e estoque.
+
+4)  Domain Storytelling (Fluxo Principal — Checkout) Atores:
+
+-   Cliente
+-   Frontend Web
+-   Serviço de Produtos
+-   Serviço de Estoque
+-   Serviço de Pedidos
+-   Serviço de Pagamentos
+-   Serviço de Envio Logístico com Rastreio de encomendas
+-   Serviço de Notificações
+
+Fluxo: 
+1. Cliente seleciona Produtos no Frontend. 
+2. Frontend consulta o Serviço de Produtos. 
+3. Cliente inicia checkout; Frontend cria o Pedido.
+4. Serviço de Pedidos registra o pedido como PENDENTE. 
+5. Frontend inicia sessão no Serviço de Pagamentos. 
+6. Cliente envia dados de pagamento. 
+7. Pagamento pode ser processado por um Provedor externo usando webhook. 
+8. Serviço de Pedidos atualiza STATUS. 
+9. Serviço de Notificações envia confirmação ao Cliente.
+
+5)  Cenários de Testes (BDD)
+
+Cenário: Pedido concluído com sucesso 
+Dado que o Cliente está autenticado 
+E possui itens no carrinho 
+Quando o Cliente finalizar a compra 
+E o pagamento for aprovado 
+Então o Pedido deve ser atualizado 
+E o Cliente recebe um e-mail de confirmação
+
+Cenário: Pagamento recusado 
+Dado que o Cliente iniciou o pagamento
+Quando o provedor retornar FALHA NO PAGAMENTO 
+Então o Pedido deve permanecer PENDENTE 
+E o Cliente deve receber notificação de pagamento recusado para atualizar nova forma de pagamento
+
+6)  Projeto da Solução (Microserviços)
+
+-   USUARIOS Service: cadastro, login, perfis, autenticação.
+-   PRODUTOS Service: catálogo, categorias.
+-   ESTOQUE Service: compras, quantidades, fornecedores.
+-   PEDIDOS Service: criação, atualização de status, histórico.
+-   PAGAMENTOS Service: integrações, webhooks, confirmação.
+-   NOTIFICAÇÃO Service: envio de e-mails.
+-   API Gateway: autenticação, roteamento.
+
+Cada serviço tem banco próprio, APIs REST e integração por eventos, usando arquitetura hexagonal com microsserviços.
