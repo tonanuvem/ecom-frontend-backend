@@ -119,11 +119,9 @@ Gere o arquivo "1-genai-requisitos.md" incluindo:
 2. Título
 3. Descrição
 4. Justificativa
-5. Prioridade (Alta/Média/Baixa)
-6. Complexidade estimada
-7. Dependências
-8. Critérios de aceite
-9. Observações relevantes
+5. Dependências
+6. Critérios de aceite
+7. Observações relevantes
 
 ---
 
