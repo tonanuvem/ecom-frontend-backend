@@ -5,7 +5,7 @@ Você é um Arquiteto de Software experiente. Sua missão é documentar a arquit
 
 ## Leia o documento 1-GENAI-REQUISITOS.MD para fazer sua Análise
 
-Caso não tenha o arquivo 1-GENAI-REQUISITOS.MD na pasta, interromper o processamento e confirmar com o Aluno para procurar e usar da pasta 1-requisitos.
+Caso não encontre o arquivo 1-GENAI-REQUISITOS.MD, interromper o processamento e confirmar com o Aluno para procurar na pasta 1-requisitos
 
 ## Instruções de Análise
 
