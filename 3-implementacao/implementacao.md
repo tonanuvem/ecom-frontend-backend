@@ -121,8 +121,10 @@ Execute cada uma das tarefas a seguir, sempre validando se os arquivos gerados e
 
 ### 5. Garantir frontend e os backends estão executando e funcionando corretamente
 - Digitando docker ps
-- Verificar se todos os componentes da solução estão funcionando
+- Verificar o Frontend da solução foi implementado, está rodando e se está funcionando
+- Verificar se todos os Backends da solução foram implementados, estão rodando e funcionando
 
 ## Conclusão
 Informar sobre a implementação da solução, garantindo a evolução incremental, separando responsabilidades com redução de risco, testes e com scaling independente do domínio.
+Deve ser exibido o IP público do ambiente (disponível através da URL checkip.amazonaws.com) e em seguida deve ser exibida a URL de acesso ao frontend e ao SWAGGERUI de cada um dos microsserviços.
 
