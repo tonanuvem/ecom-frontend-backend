@@ -125,6 +125,6 @@ Execute cada uma das tarefas a seguir, sempre validando se os arquivos gerados e
 - Verificar se todos os Backends da solução foram implementados, estão rodando e funcionando
 
 ## Conclusão
-Informar sobre a implementação da solução, garantindo a evolução incremental, separando responsabilidades com redução de risco, testes e com scaling independente do domínio.
+Informar sobre a implementação da solução.
 Deve ser exibido o IP público do ambiente (disponível através da URL checkip.amazonaws.com) e em seguida deve ser exibida a URL de acesso ao frontend e ao SWAGGERUI de cada um dos microsserviços.
 
