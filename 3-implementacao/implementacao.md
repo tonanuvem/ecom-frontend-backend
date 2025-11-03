@@ -97,6 +97,7 @@ Execute cada uma das tarefas a seguir, sempre validando se os arquivos gerados e
 - Os arquivos do frontend devem ser gerados em /ecom/frontend
 - Os diversos microsserviços devem ser criados usando Docker, ou seja, deve ser criado um Dockerfile
 - Deve ser habilitado o CORS para redirecionamento aos backends
+- Deve ser implementado o Swagger UI em todos os backends
 - Os testes unitários devem ser implementados para validar funcionalidades internas de cada microsserviço
 - Criar a imagem de cada microsserviço através do comando docker build
 - Executar cada microsserviço e verificar se os testes unitários de cada microsserviço está sendo realizado com sucesso
