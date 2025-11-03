@@ -65,7 +65,10 @@ Implementar uma solução de E‑commerce baseada em microserviços, com um **fr
 - Alertas (CPU, memória, error rate, queue lag).
 - Tracing distribuído para diagnosticar latência entre serviços.
 
-### 7. Anexo: Estrutura de Pastas (exemplo monorepo)
+## Formato de Saída
+Execute cada uma das tarefas a seguir, sempre validando se os arquivos gerados estão de acordo com as instruções de análise
+
+### 1. Criar a Estrutura de Pastas (exemplo monorepo)
 ```
 /ecom
   /frontend
@@ -82,6 +85,44 @@ Implementar uma solução de E‑commerce baseada em microserviços, com um **fr
   /testes_integracao
 ```
 
+### 2. Criar um projeto em Java usando Cucumber para implementar contemplar os testes de integração seguindo melhores práticas de BDD:
+- Os arquivos devem ser gerados em /ecom/testes_integracao
+- Usar os cenários de testes em portugues
+- Contemplar o uso de Esquema de Cenários, incluindo exemplos com valores no formato tabular para serem usados nos testes
+- No final desta etapa, executar o projeto com "mvn test", porém como os microsserviços ainda não foram criados, esses testes devem falhar
+- Verificar e corrigir somente erros relacionados ao Cucumber
+- Criar script para disparar teste de integração em /ecom/scripts
+
+### 3. Criar o código de cada um dos backends, contemplando os testes unitários seguindo melhores práticas de TDD:
+- Os arquivos do frontend devem ser gerados em /ecom/frontend
+- Os diversos microsserviços devem ser criados usando Docker, ou seja, deve ser criado um Dockerfile
+- Deve ser habilitado o CORS para redirecionamento aos backends
+- Os testes unitários devem ser implementados para validar funcionalidades internas de cada microsserviço
+- Criar a imagem de cada microsserviço através do comando docker build
+- Executar cada microsserviço e verificar se os testes unitários de cada microsserviço está sendo realizado com sucesso
+- Quando todos os microsserviços estiverem rodando com sucesso, deve ser adaptado o teste de integracao da pasta /ecom/testes_integracao para implementar a chamada ao endpoint de cada um dos microsserviços
+- Disparar o teste de integração e garantir que esteja efetivamente validando todos os microsserviços criados na solução, de acordo com os requisitos funcionais e não funcionais definidos no arquivo 1-genai-requisitos.md
+- Criar um docker-compose.yml na pasta /infra/docker-compose/singlenode
+- Executar a solução e corrigir automaticamente os erros que forem sendo encontrados
+- Criar script para executar a solução em /ecom/scripts
+
+### 4. Criar o código do frontend, contemplando os testes unitários seguindo melhores práticas de TDD:
+- Os arquivos de cada backend devem ser gerados em /ecom/backend
+- Frontend deve ser criados usando Docker, ou seja, deve ser criado um Dockerfile
+- O Frontend deve ser criado com react-admin (https://marmelab.com/react-admin/) e vite
+- O Frontend deve ser construido com base no exemplo disponivel em: https://marmelab.com/react-admin-helpdesk/#/tickets
+- Cada tela do frontend deve ter os campos que são usados como inputs nos endpoints de cada microsserviço
+- Deve ser configurado proxy reverso e habilitado o CORS para redirecionamento aos backends
+- Os testes unitários devem ser implementados para validar funcionalidades internas
+- Executar frontend e verificar se o teste unitário está sendo realizado com sucesso
+- Quando todos os microsserviços estiverem rodando com sucesso, deve ser executado o frontend e corrigir possíveis erros
+- Adaptar para contemplar o frontend no docker-compose.yml da pasta /infra/docker-compose/singlenode
+- Executar a solução e corrigir automaticamente os erros que forem sendo encontrados
+
+### 5. Garantir frontend e os backends estão executando e funcionando corretamente
+- Digitando docker ps
+- Verificar se todos os componentes da solução estão funcionando
+
 ## Conclusão
-Implementação que permite evolução incremental. Separar responsabilidades reduz risco, facilita testes e permite scaling independente do domínio.
+Informar sobre a implementação da solução, garantindo a evolução incremental, separando responsabilidades com redução de risco, testes e com scaling independente do domínio.
 
