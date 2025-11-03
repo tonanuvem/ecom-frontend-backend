@@ -48,7 +48,7 @@ Gere o arquivo "2-genai-arquitetura.md" incluindo:
 - Documentação da Arquitetura da Solução com Visão Geral dos Componentes
 - Diagramas em sintaxe mermaid
 - Domain Storytelling (texto)
-- Cenários de Teste (BDD — Gherkin) baseado no Domain Storytellin
+- Cenários de Teste (BDD — Gherkin) baseado no Domain Storytellin, contemplando cenários para TODOS os Requisitos Funcionais, e também para TODOS os requisitos não funcionais.
 - Topologia identificando os microsserviços da solução e uso da arquitetura hexagonal
 - Principais Microserviços e Endpoints (exemplos REST)
 - Proposta da Modelos de Dados simplificado (incluindo sugestão de tabelas ou json e seus respectivos campos) de cada microsserviço
