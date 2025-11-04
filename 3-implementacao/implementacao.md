@@ -94,10 +94,13 @@ Execute cada uma das tarefas a seguir, sempre validando se os arquivos gerados e
 - Criar script para disparar teste de integração em /ecom/scripts
 
 ### 3. Criar o código de cada um dos backends, contemplando os testes unitários seguindo melhores práticas de TDD:
-- Os arquivos do frontend devem ser gerados em /ecom/frontend
+- Os arquivos de cada backend devem ser gerados em /ecom/backend
 - Os diversos microsserviços devem ser criados usando Docker, ou seja, deve ser criado um Dockerfile
 - Deve ser habilitado o CORS para redirecionamento aos backends
 - Deve ser implementado o Swagger UI em todos os backends
+- As ações CRUDs usando implementadas em cada backend devem suportar as requisições de acordo com a documentação do react-admin usando ra-data-simple-rest.
+- Cada backend deve usar variaveis de ambiente para suas configurações
+- Cada backend deve habilitar o recebimento de chamada em suas rotas utilizandos o IP público (0.0.0.0)
 - Os testes unitários devem ser implementados para validar funcionalidades internas de cada microsserviço
 - Criar a imagem de cada microsserviço através do comando docker build
 - Executar cada microsserviço e verificar se os testes unitários de cada microsserviço está sendo realizado com sucesso
@@ -108,11 +111,18 @@ Execute cada uma das tarefas a seguir, sempre validando se os arquivos gerados e
 - Criar script para executar a solução em /ecom/scripts
 
 ### 4. Criar o código do frontend, contemplando os testes unitários seguindo melhores práticas de TDD:
-- Os arquivos de cada backend devem ser gerados em /ecom/backend
+- Os arquivos do frontend devem ser gerados em /ecom/frontend
 - Frontend deve ser criados usando Docker, ou seja, deve ser criado um Dockerfile
 - O Frontend deve ser criado com react-admin (https://marmelab.com/react-admin/) e vite
-- O Frontend deve ser construido com base no exemplo disponivel em: https://marmelab.com/react-admin-helpdesk/#/tickets
+- O Frontend deve ser construido com base no exemplo disponivel em: https://marmelab.com/react-admin-helpdesk/
+- O Frontend deve usar variaveis de ambiente para apontar para cada endpoint de cada microsservico, não devendo usar localhost
 - Cada tela do frontend deve ter os campos que são usados como inputs nos endpoints de cada microsserviço
+- O menu esquerdo do frontend deve ser construído com um ícone e o nome de cada microsserviço.
+- Na última parte do menu esquerdo, deve ser inserido uma seção com o link para p SWAGGER UI para cada um dos backends.
+- Ao clicar em um microsserviço, deve feito um GET ao respectivo microsserviço para mostrar os dados existentes atualmente em formato de card ou list (o usuário deve ter a opção de escolher em qual dos 2 formatos os dados serão exibidos), e deve ser poss[ivel realizar ações CRUDs usando ra-data-simple-rest.
+- O Frontend deve exibido ícones ao lado de cada item que seja clicável, visando melhorar a usabilidade das telas
+- O Frontend deve ser responsível para se adaptar a multiplos dispositivos com tamanhos de telas diferentes.
+- O Frontend deve ser construído com cores vibrantes e com design moderno.
 - Deve ser configurado proxy reverso e habilitado o CORS para redirecionamento aos backends
 - Os testes unitários devem ser implementados para validar funcionalidades internas
 - Executar frontend e verificar se o teste unitário está sendo realizado com sucesso
