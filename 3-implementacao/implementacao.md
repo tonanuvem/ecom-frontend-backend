@@ -101,6 +101,7 @@ Execute cada uma das tarefas a seguir, sempre validando se os arquivos gerados e
 - As ações CRUDs usando implementadas em cada backend devem suportar as requisições de acordo com a documentação do react-admin usando ra-data-simple-rest.
 - Cada backend deve usar variaveis de ambiente para suas configurações
 - Cada backend deve habilitar o recebimento de chamada em suas rotas utilizandos o IP público (0.0.0.0)
+- Cada backend deve disponibilizar uma rota que verifique a sua saúde (por exemplo: /status)
 - Os testes unitários devem ser implementados para validar funcionalidades internas de cada microsserviço
 - Criar a imagem de cada microsserviço através do comando docker build
 - Executar cada microsserviço e verificar se os testes unitários de cada microsserviço está sendo realizado com sucesso
@@ -123,6 +124,7 @@ Execute cada uma das tarefas a seguir, sempre validando se os arquivos gerados e
 - O Frontend deve exibido ícones ao lado de cada item que seja clicável, visando melhorar a usabilidade das telas
 - O Frontend deve ser responsível para se adaptar a multiplos dispositivos com tamanhos de telas diferentes.
 - O Frontend deve ser construído com cores vibrantes e com design moderno.
+- O Frontend deve exibir no footer o status de cada backend, obtido a partir da rota que verifique a saúde do respetico backend
 - Deve ser configurado proxy reverso e habilitado o CORS para redirecionamento aos backends
 - Os testes unitários devem ser implementados para validar funcionalidades internas
 - Executar frontend e verificar se o teste unitário está sendo realizado com sucesso
