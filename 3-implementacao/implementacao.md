@@ -96,6 +96,7 @@ Execute cada uma das tarefas a seguir, sempre validando se os arquivos gerados e
 ### 3. Criar o código de cada um dos backends, contemplando os testes unitários seguindo melhores práticas de TDD:
 - Os arquivos de cada backend devem ser gerados em /ecom/backend
 - Os diversos microsserviços devem ser criados usando Docker, ou seja, deve ser criado um Dockerfile
+- Cada backend deve acessar seu próprio banco de dados. Cada banco de dados deve ser executado em docker.
 - Deve ser habilitado o CORS para redirecionamento aos backends
 - Deve ser implementado o Swagger UI em todos os backends
 - As ações CRUDs usando implementadas em cada backend devem suportar as requisições de acordo com a documentação do react-admin usando ra-data-simple-rest.
@@ -108,6 +109,7 @@ Execute cada uma das tarefas a seguir, sempre validando se os arquivos gerados e
 - Quando todos os microsserviços estiverem rodando com sucesso, deve ser adaptado o teste de integracao da pasta /ecom/testes_integracao para implementar a chamada ao endpoint de cada um dos microsserviços
 - Disparar o teste de integração e garantir que esteja efetivamente validando todos os microsserviços criados na solução, de acordo com os requisitos funcionais e não funcionais definidos no arquivo 1-genai-requisitos.md
 - Criar um docker-compose.yml na pasta /infra/docker-compose/singlenode
+- Verificar se no docker-compose.yml existe a configuração para executar o banco de dados de cada um dos microsserviços
 - Executar a solução e corrigir automaticamente os erros que forem sendo encontrados
 - Criar script para executar a solução em /ecom/scripts
 
