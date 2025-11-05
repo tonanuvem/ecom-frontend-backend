@@ -110,7 +110,8 @@ Execute cada uma das tarefas a seguir, sempre validando se os arquivos gerados e
 - Disparar o teste de integração e garantir que esteja efetivamente validando todos os microsserviços criados na solução, de acordo com os requisitos funcionais e não funcionais definidos no arquivo 1-genai-requisitos.md
 - Criar um docker-compose.yml na pasta /infra/docker-compose/singlenode
 - Verificar se no docker-compose.yml existe a configuração para executar o banco de dados de cada um dos microsserviços
-- Executar a solução e corrigir automaticamente os erros que forem sendo encontrados
+- Criar o script de "migrations" que vai inserir dados em todos os bancos de dados de cada um dos backends
+- Executar a solução, inclusive o script para inserir dados nos bancos de dados, e corrigir automaticamente os erros que forem sendo encontrados
 - Criar script para executar a solução em /ecom/scripts
 
 ### 4. Criar o código do frontend, contemplando os testes unitários seguindo melhores práticas de TDD:
