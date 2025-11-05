@@ -137,6 +137,7 @@ Execute cada uma das tarefas a seguir, sempre validando se os arquivos gerados e
 
 ### 5. Garantir frontend e os backends estão executando e funcionando corretamente
 - Digitando docker ps
+- Pesquisar na pasta do projeto /ecom e verificar se existe algum código que esteja apontando para localhost, e se for encontrado, ajustar para usar variável de ambiente
 - Verificar o Frontend da solução foi implementado, está rodando e se está funcionando
 - Verificar se todos os Backends da solução foram implementados, estão rodando e funcionando
 
