@@ -1,16 +1,16 @@
 # 📦 Descrição do Projeto e Objetivo do Pipeline
 
-Este repositório /ecom contém um **projeto monorepo** composto por múltiplos **microserviços** (cada um com seus próprios testes unitários) e uma pasta separada de **testes de integração** baseada em **Cucumber**.
+A pasta /ecom contém um **projeto monorepo** composto por múltiplos **microserviços** (cada um com seus próprios testes unitários) e uma pasta separada de **testes de integração** baseada em **Cucumber**.
 
 O objetivo é criar um **pipeline de CI/CD simples** que possa ser **executado tanto localmente quanto em ambiente de CI** (por exemplo, GitHub Actions, AWS CodeBuild, ou outra plataforma), garantindo a execução automatizada de:
 1. Build dos microserviços
 2. Testes unitários de cada microserviço
 3. Testes de integração de ponta a ponta (Cucumber)
-4. Opção futura de implantação (deploy) para ambientes de staging/produção
+4. Implantação (deploy) usando o docker-compose para ambientes local ou de produção
 
 ---
 
-## 🧩 Estrutura Geral do Repositório
+## 🧩 Estrutura Geral do Repositório para esta etapa
 
 ```
 ecom/
@@ -23,68 +23,57 @@ ecom/
 
 ## 🧠 Requisitos Técnicos do Pipeline
 
-### 1. Estrutura de Jobs
+### 1. Estrutura de Fases do Pipeline
 - Um job principal chamado `build-and-test`
 - Etapas:
   - Checkout do código
   - Configuração do ambiente
   - Execução dos testes unitários dos microserviços a partir da pasta /ecom/backend
   - Execução dos testes de integração Cucumber a partir da pasta /ecom/testes_integracao
-- Opcionalmente, um job futuro de deploy.
+- Um job de deploy no proprio ambiente usando docker-compose.yml
 
-### 5. Compatibilidade
+### 2. Compatibilidade
 - O pipeline deve poder rodar:
   - Localmente via **act (GitHub Actions local runner)**
   - Em ambientes de CI/CD da AWS (ex: **AWS CodeBuild**)
   - Em **GitHub Actions** (estrutura YAML padrão)
 
----
-
-## ⚙️ Expectativa de Saída do Pipeline
+### 3. Expectativa de Saída do Pipeline
 
 - Um arquivo YAML de pipeline (ex: `.github/workflows/ci.yml` ou `buildspec.yml`) que:
   - Faça o checkout do repositório
-  - Configure Java 17
+  - Configure as dependencias necessárias
   - Execute todos os testes unitários de cada microserviço
   - Execute os testes de integração (Cucumber)
   - Exiba o status final da build (sucesso/falha)
   - Use etapas nomeadas e com logs legíveis
 
----
-
-## 🧩 Requisitos Opcionais (para evolução futura)
+### 4. Requisitos adicionais
 
 - Cache Maven (`actions/cache` ou similar)
-- Geração de relatórios JUnit
+- Geração de relatórios
 - Build paralelo dos microserviços
-- Deploy automatizado para ambiente de staging no EKS/EC2
+- Deploy automatizado para ambiente
 - Integração com ferramentas de code quality (SonarQube)
 
----
+### 5. Exemplo de comando desejado para execução local
 
-## ✅ Objetivo do Prompt
-
-Gerar um pipeline funcional, legível e portável (em YAML), com foco em **simplicidade, clareza e execução local via `act`** ou em **ambiente AWS CodeBuild**, de forma que o time de desenvolvimento possa:
-- Rodar testes automaticamente em cada commit/pull request
-- Validar integração completa antes de deploy
-- Ter logs claros para depuração de falhas
-
----
-
-## 🧭 Exemplo de comando desejado para execução local
+Criar um script na pasta /ecom/scripts para que seja possível executar o pipeline, por exemplo:
 
 ```bash
 act workflow_dispatch
 ```
 
-ou
-
-```bash
-aws codebuild start-build --project-name ecommerce-monorepo
-```
-
 ---
 
-## 💬 Instrução para o Amazon Q Developer
+## Formato de Saída
 
-> Com base nesta descrição (`pipeline.md`), gere um arquivo de pipeline CI/CD YAML que atenda aos requisitos acima, priorizando simplicidade e compatibilidade com execução local (`act`) e com AWS CodeBuild.
+Gerar um pipeline funcional, legível e portável (em YAML), com foco em **simplicidade, clareza e execução local via `act`**, de forma que seja possível:
+- Rodar testes automaticamente em cada commit/pull request
+- Validar integração completa antes de deploy
+- Ter logs claros para depuração de falhas
+
+
+## Conclusão
+
+- Com base nesta descrição (`cicd.md`), deve ser gerado um arquivo de pipeline CI/CD YAML que atenda aos requisitos acima, priorizando simplicidade e compatibilidade com execução local (`act`).
