@@ -31,17 +31,15 @@ Implementar a solução baseada em microserviços, com vários backends especial
 - Criar scripts simples de inicialização dos dados nos respectivos bancos de dados
 
 ### 4. Integração Frontend ↔ Backend (padrões e boas práticas)
-- Frontend chama o **API Gateway** (ex: `/api/*`), que faz roteamento para os microserviços.
 - Utilizar Autenticação para garantir segurança.
 - Usar retries, service mesh e circuit breaker para chamadas críticas.
 - Proteger dados sensíveis, ao usar redirect para provedores ou integrar via sessão segura.
-- Segurança e Conformidade com HTTPS obrigatório (usando certificado auto assinados para economia de custos).
+- Facilidade de uso com HTTP nos Backends ( não usar HTTPS para economia de custos).
 - Proteção contra CSRF, XSS e SQL injection.
 - Tokens com expiração curta e refresh token seguro.
 - Logs sem dados sensíveis (compliance com melhores práticas).
 
 ### 5. Tecnologias dominadas pela equipe técnica da empresa (ex: open source)
-- API Gateway: Kong
 - Microservices: Python (FastAPI), Node.js (Express), Java (Quarkus ou Spring Boot)
 - Databases: Mongo, PostgreSQL, Redis (cache/sessions)
 - Message Broker: Apache Kafka
