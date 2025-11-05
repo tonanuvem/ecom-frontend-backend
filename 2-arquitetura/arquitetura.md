@@ -40,7 +40,6 @@ Gere diagramas mermaid para:
 - Fluxo de dados
 - Componentes do Front end
 - Componentes de cada Back end
-- Plano resumido com etapas sequencias que devem ser seguidas durante e implementação do código
 - Topologia com ambientes para Implantação usando conteineres com alta disponibilidade
 
 ## Formato de Saída
@@ -49,6 +48,7 @@ Gere o arquivo "2-genai-arquitetura.md" incluindo:
 - Diagramas em sintaxe mermaid
 - Domain Storytelling (texto)
 - Cenários de Teste (BDD — Gherkin) baseado no Domain Storytellin, contemplando cenários para TODOS os Requisitos Funcionais, e também para TODOS os requisitos não funcionais.
+- Revisar os cenários de testes BDD com Gherkin para ter certeza que todos os requisitos funcionais e não funcionais possuem cenários de testes.
 - Topologia identificando os microsserviços da solução e uso da arquitetura hexagonal
 - Principais Microserviços e Endpoints (exemplos REST)
 - Proposta da Modelos de Dados simplificado (incluindo sugestão de tabelas ou json e seus respectivos campos) de cada microsserviço
