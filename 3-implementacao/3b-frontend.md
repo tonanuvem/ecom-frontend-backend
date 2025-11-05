@@ -1,4 +1,4 @@
-# Implementação da Solução conforme Arquitetura e garantindo cobertura de teste a partir de requisitos
+# Implementação do Frontend da Solução conforme Arquitetura e garantindo cobertura de teste a partir de requisitos
 
 ## Função
 Você é um Desenvolvedor Frontend especialista em React e Testador de Software experiente. Sua missão é implementar a arquitetura técnica do projeto.
@@ -10,32 +10,27 @@ Caso não encontre os arquivos, interromper o processamento e confirmar com o Al
 ## Instruções de Análise
 
 ### 1. Resumo Executivo
-Implementar uma solução de E‑commerce baseada em microserviços, com um **frontend web** (SPA) consumindo vários backends especializados. A arquitetura foca em escalabilidade, independência de implantação, observabilidade e facilidade de teste.
+Implementar uma solução baseada em microserviços, com um **frontend web** (SPA) consumindo vários backends especializados. A arquitetura foca em escalabilidade, independência de implantação, observabilidade e facilidade de teste.
 
 ### 2. Objetivos
 - Fornecer funcionalidade responsiva aos usuários.
 - Separar responsabilidades por domínio.
 - Implementar usando pouco código e simples de entender
 - Inserir explicações no próprio código através de comentários
-- Permitir deploy independente e escalonamento por serviço.
-- Garantir segurança (autenticação/autorização) e resiliência (retry, circuit breaker).
+- Permitir deploy com componentes independente.
+- Garantir segurança (autenticação/autorização).
 - Facilitar integração entre frontend e APIs via HTTP/REST
 
 ### 3. Principais Microserviços com Endpoints (REST) e também consumindo Eventos
 
-- Criar todos os microsserviços com OpenAPI/Swagger.
-- Usar Eventos para comunicação assíncrona e desacoplada.
 - Os mesmos campos do JSON passados em chamadas síncronas também podem estar disponíveis para serem usados em chamadas assíncronas.
-- Criar cenários de Teste de integração (BDD — Gherkin) para comunicações síncronas e assíncronas
-- Implementar Modelos de Dados simples de cada componente e documentar através de comentários em cada código 
-- Criar scripts simples de inicialização dos dados nos respectivos bancos de dados
+- Criar cenários de Teste de integração (BDD — Gherkin) o Frontend faça chamadas síncronas ao backend
 
 ### 4. Integração Frontend ↔ Backend (padrões e boas práticas)
 - Frontend chama o **API Gateway** (ex: `/api/*`), que faz roteamento para os microserviços.
 - Utilizar Autenticação para garantir segurança.
 - Frontend deve validar dados localmente antes de enviar (forms) ao backend.
-- Usar retries exponenciais, service mesh e circuit breaker para chamadas críticas.
-- Proteger dados sensíveis, por exemplo em Pagamentos, usar redirect para provedores ou integrar via sessão segura; nunca armazenar dados de cartão no servidor.
+- Proteger dados sensíveis, ao usar redirect para provedores ou integrar via sessão segura.
 - Segurança e Conformidade com HTTPS obrigatório (usando certificado auto assinados para economia de custos).
 - Proteção contra CSRF, XSS e SQL injection.
 - Tokens com expiração curta e refresh token seguro.
@@ -44,31 +39,21 @@ Implementar uma solução de E‑commerce baseada em microserviços, com um **fr
 ### 5. Tecnologias dominadas pela equipe técnica da empresa (ex: open source)
 - Frontend: React Admin + Vite
 - API Gateway: Kong
-- Microservices: Python (FastAPI), Node.js (Express), Java (Quarkus ou Spring Boot), .NET
-- Databases: Mongo, PostgreSQL, Redis (cache/sessions)
-- Message Broker: Apache Kafka
-- Search: Elasticsearch
-- Observability: Prometheus + Grafana, Jaeger, ELK/EFK
-- Auth: Keycloak (OpenID Connect)
 - CI/CD: GitHub Actions
 - Containerização: Docker + Kubernetes (k8s) para orquestração
 
 ### 6. Deploy, Infraestrutura, Observability e Operação
 - Criar script para executar toda a solução
 - Deploy em Kubernetes e docker-compose.
-- Separar ambientes: dev / staging / prod.
 - Criar pipelines CI/CD para cada ambiente.
-- Backups regulares para bancos de dados; restore testado.
 - Autoscaling horizontal para serviços stateless (frontend, backends).
-- Possibilidade de usar istio service mesh no K8S
-- Métricas por serviço (latência, erros, throughput).
-- Alertas (CPU, memória, error rate, queue lag).
-- Tracing distribuído para diagnosticar latência entre serviços.
+- Métricas no frontend.
+- Tracing distribuído para diagnosticar latência de chamadas feitas pelo frontend aos backends.
 
 ## Formato de Saída
 Execute cada uma das tarefas a seguir, sempre validando se os arquivos gerados estão de acordo com as instruções de análise
 
-### 1. Criar a Estrutura de Pastas (exemplo monorepo)
+### 1. Criar subpasta do frontend e Analisar a Estrutura de Pastas já criada (exemplo monorepo)
 ```
 /ecom
   /frontend
@@ -83,38 +68,18 @@ Execute cada uma das tarefas a seguir, sempre validando se os arquivos gerados e
       /swarm
   /scripts
   /testes_integracao
+  /testes_ui
 ```
 
-### 2. Criar um projeto em Java usando Cucumber para implementar contemplar os testes de integração seguindo melhores práticas de BDD:
-- Os arquivos devem ser gerados em /ecom/testes_integracao
+### 2. Criar o projeto em Java usando Cucumber e Selenium para contemplar o Frontend nos testes seguindo melhores práticas de BDD:
+- Os arquivos devem ser gerados em /ecom/testes_ui
 - Usar os cenários de testes em portugues
 - Contemplar o uso de Esquema de Cenários, incluindo exemplos com valores no formato tabular para serem usados nos testes
-- No final desta etapa, executar o projeto com "mvn test", porém como os microsserviços ainda não foram criados, esses testes devem falhar
-- Verificar e corrigir somente erros relacionados ao Cucumber
-- Criar script para disparar teste de integração em /ecom/scripts
+- No final desta etapa, executar o projeto com "mvn test", e considerando que os microsserviços já foram criados e estão rodando, esses testes ser executados com sucesso
+- Verificar e corrigir erros relacionados ao Selenium
+- Criar script para disparar teste de ui em /ecom/scripts
 
-### 3. Criar o código de cada um dos backends, contemplando os testes unitários seguindo melhores práticas de TDD:
-- Os arquivos de cada backend devem ser gerados em /ecom/backend
-- Os diversos microsserviços devem ser criados usando Docker, ou seja, deve ser criado um Dockerfile
-- Cada backend deve acessar seu próprio banco de dados. Cada banco de dados deve ser executado em docker.
-- Deve ser habilitado o CORS para redirecionamento aos backends
-- Deve ser implementado o Swagger UI em todos os backends
-- As ações CRUDs usando implementadas em cada backend devem suportar as requisições de acordo com a documentação do react-admin usando ra-data-simple-rest.
-- Cada backend deve usar variaveis de ambiente para suas configurações
-- Cada backend deve habilitar o recebimento de chamada em suas rotas utilizandos o IP público (0.0.0.0)
-- Cada backend deve disponibilizar uma rota que verifique a sua saúde (por exemplo: /status)
-- Os testes unitários devem ser implementados para validar funcionalidades internas de cada microsserviço
-- Criar a imagem de cada microsserviço através do comando docker build
-- Executar cada microsserviço e verificar se os testes unitários de cada microsserviço está sendo realizado com sucesso
-- Quando todos os microsserviços estiverem rodando com sucesso, deve ser adaptado o teste de integracao da pasta /ecom/testes_integracao para implementar a chamada ao endpoint de cada um dos microsserviços
-- Disparar o teste de integração e garantir que esteja efetivamente validando todos os microsserviços criados na solução, de acordo com os requisitos funcionais e não funcionais definidos no arquivo 1-genai-requisitos.md
-- Criar um docker-compose.yml na pasta /infra/docker-compose/singlenode
-- Verificar se no docker-compose.yml existe a configuração para executar o banco de dados de cada um dos microsserviços
-- Criar o script de "migrations" que vai inserir dados em todos os bancos de dados de cada um dos backends
-- Executar a solução, inclusive o script para inserir dados nos bancos de dados, e corrigir automaticamente os erros que forem sendo encontrados
-- Criar script para executar a solução em /ecom/scripts
-
-### 4. Criar o código do frontend, contemplando os testes unitários seguindo melhores práticas de TDD:
+### 3. Criar o código do frontend, contemplando os testes unitários seguindo melhores práticas de TDD:
 - Os arquivos do frontend devem ser gerados em /ecom/frontend
 - Frontend deve ser criados usando Docker, ou seja, deve ser criado um Dockerfile
 - O Frontend deve ser criado com react-admin (https://marmelab.com/react-admin/) e vite
@@ -135,7 +100,7 @@ Execute cada uma das tarefas a seguir, sempre validando se os arquivos gerados e
 - Adaptar para contemplar o frontend no docker-compose.yml da pasta /infra/docker-compose/singlenode
 - Executar a solução e corrigir automaticamente os erros que forem sendo encontrados
 
-### 5. Garantir frontend e os backends estão executando e funcionando corretamente
+### 4. Garantir frontend e os backends estão executando e funcionando corretamente
 - Digitando docker ps
 - Pesquisar na pasta do projeto /ecom e verificar se existe algum código que esteja apontando para localhost, e se for encontrado, ajustar para usar variável de ambiente
 - Verificar o Frontend da solução foi implementado, está rodando e se está funcionando
