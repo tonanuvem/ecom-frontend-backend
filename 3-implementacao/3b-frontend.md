@@ -31,7 +31,7 @@ Implementar uma solução baseada em microserviços, com um **frontend web** (SP
 - Utilizar Autenticação para garantir segurança.
 - Frontend deve validar dados localmente antes de enviar (forms) ao backend.
 - Proteger dados sensíveis, ao usar redirect para provedores ou integrar via sessão segura.
-- Segurança e Conformidade com HTTPS obrigatório (usando certificado auto assinados para economia de custos).
+- Facilidade de uso com HTTP nos Backends ( não usar HTTPS para economia de custos).
 - Proteção contra CSRF, XSS e SQL injection.
 - Tokens com expiração curta e refresh token seguro.
 - Logs sem dados sensíveis (compliance com melhores práticas).
