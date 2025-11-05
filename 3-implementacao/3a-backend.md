@@ -97,6 +97,7 @@ Execute cada uma das tarefas a seguir, sempre validando se os arquivos gerados e
 - Deve ser configurado o Content Security Policy (CSP) para que o cabeçalho CSP possa incluir todos os domínios necessários
 - Desabilitar o uso do header HSTS para o navegador não forçar HTTPS em um servidor HTTP.
 - Deve ser implementado o Swagger UI em todos os backends
+- Swagger UI não deve carregar os assets via HTTPS quando a página é servida via HTTP. Portanto, configurar o Swagger para usar URLs relativas
 - As ações CRUDs usando implementadas em cada backend devem suportar as requisições de acordo com a documentação do react-admin usando ra-data-simple-rest.
 - Cada backend deve usar variaveis de ambiente para suas configurações
 - Cada backend deve habilitar o recebimento de chamada em suas rotas utilizandos o IP público (0.0.0.0)
