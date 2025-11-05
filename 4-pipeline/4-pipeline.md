@@ -76,4 +76,4 @@ Gerar um pipeline funcional, legível e portável (em YAML), com foco em **simpl
 
 ## Conclusão
 
-- Com base nesta descrição (`cicd.md`), deve ser gerado um arquivo de pipeline CI/CD YAML que atenda aos requisitos acima, priorizando simplicidade e compatibilidade com execução local (`act`).
+- Com base nesta descrição, deve ser gerado um arquivo de pipeline CI/CD YAML que atenda aos requisitos acima, priorizando simplicidade e compatibilidade com execução local (`act`).
