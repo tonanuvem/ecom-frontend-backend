@@ -13,22 +13,7 @@ O objetivo é criar um **pipeline de CI/CD simples** que possa ser **executado t
 ## 🧩 Estrutura Geral do Repositório
 
 ```
-ecommerce-monorepo/
-├── microservices/
-│   ├── orders/
-│   │   ├── src/
-│   │   └── pom.xml
-│   ├── products/
-│   │   ├── src/
-│   │   └── pom.xml
-│   └── payments/
-│       ├── src/
-│       └── pom.xml
-├── integration-tests/
-│   ├── features/
-│   │   ├── checkout.feature
-│   │   └── payment.feature
-│   └── pom.xml
+ecom/
 └── .github/
     └── workflows/
         └── ci.yml
@@ -38,33 +23,13 @@ ecommerce-monorepo/
 
 ## 🧠 Requisitos Técnicos do Pipeline
 
-### 1. Linguagem e Build
-- Linguagem: **Java 17**
-- Ferramenta de build: **Maven Wrapper (`./mvnw`)**
-- O pipeline deve configurar o ambiente Java antes de executar testes.
-
-### 2. Testes Unitários
-- Cada microserviço deve rodar seus próprios testes unitários com:
-  ```bash
-  ./mvnw test
-  ```
-- Executar sequencialmente ou em paralelo, conforme suporte da plataforma.
-
-### 3. Testes de Integração
-- Localizados na pasta `integration-tests/`
-- Devem ser executados com:
-  ```bash
-  mvn clean test
-  ```
-- Usam **Cucumber** para validações ponta a ponta.
-
-### 4. Estrutura de Jobs
+### 1. Estrutura de Jobs
 - Um job principal chamado `build-and-test`
 - Etapas:
   - Checkout do código
-  - Configuração do ambiente Java 17
-  - Execução dos testes unitários dos microserviços
-  - Execução dos testes de integração Cucumber
+  - Configuração do ambiente
+  - Execução dos testes unitários dos microserviços a partir da pasta /ecom/backend
+  - Execução dos testes de integração Cucumber a partir da pasta /ecom/testes_integracao
 - Opcionalmente, um job futuro de deploy.
 
 ### 5. Compatibilidade
