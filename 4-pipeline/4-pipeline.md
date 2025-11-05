@@ -1,4 +1,4 @@
-# 📦 Descrição do Projeto e Objetivo do Pipeline
+# Descrição do Projeto e Objetivo do Pipeline
 
 A pasta /ecom contém um **projeto monorepo** composto por múltiplos **microserviços** (cada um com seus próprios testes unitários) e uma pasta separada de **testes de integração** baseada em **Cucumber**.
 
@@ -10,7 +10,7 @@ O objetivo é criar um **pipeline de CI/CD simples** que possa ser **executado t
 
 ---
 
-## 🧩 Estrutura Geral do Repositório para esta etapa
+## Estrutura Geral do Repositório para esta etapa
 
 ```
 ecom/
@@ -21,7 +21,7 @@ ecom/
 
 ---
 
-## 🧠 Requisitos Técnicos do Pipeline
+## Requisitos Técnicos do Pipeline
 
 ### 1. Estrutura de Fases do Pipeline
 - Um job principal chamado `build-and-test`
