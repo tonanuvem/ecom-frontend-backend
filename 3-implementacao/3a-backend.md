@@ -1,4 +1,4 @@
-# Implementação da Solução conforme Arquitetura e garantindo cobertura de teste a partir de requisitos
+# Implementação dos Backends da Solução conforme Arquitetura e garantindo cobertura de teste a partir de requisitos
 
 ## Função
 Você é um Desenvolvedor Backend e Testador de Software experiente. Sua missão é implementar a arquitetura técnica do projeto.
@@ -117,5 +117,5 @@ Execute cada uma das tarefas a seguir, sempre validando se os arquivos gerados e
 
 ## Conclusão
 Informar sobre a implementação da solução.
-Deve ser exibido o IP público do ambiente (disponível através da URL checkip.amazonaws.com) e em seguida deve ser exibida a URL de acesso ao frontend e ao SWAGGERUI de cada um dos microsserviços.
+Deve ser exibido o IP público do ambiente (disponível através da URL checkip.amazonaws.com) e em seguida deve ser exibida a URL de acesso ao SWAGGERUI de cada um dos microsserviços.
 
