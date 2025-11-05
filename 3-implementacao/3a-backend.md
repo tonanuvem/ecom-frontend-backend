@@ -95,6 +95,7 @@ Execute cada uma das tarefas a seguir, sempre validando se os arquivos gerados e
 - Cada backend deve acessar seu próprio banco de dados. Cada banco de dados deve ser executado em docker.
 - Deve ser habilitado o CORS para redirecionamento aos backends
 - Deve ser configurado o Content Security Policy (CSP) para que o cabeçalho CSP possa incluir todos os domínios necessários
+- Desabilitar o uso do header HSTS para o navegador não forçar HTTPS em um servidor HTTP.
 - Deve ser implementado o Swagger UI em todos os backends
 - As ações CRUDs usando implementadas em cada backend devem suportar as requisições de acordo com a documentação do react-admin usando ra-data-simple-rest.
 - Cada backend deve usar variaveis de ambiente para suas configurações
