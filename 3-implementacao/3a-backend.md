@@ -94,6 +94,7 @@ Execute cada uma das tarefas a seguir, sempre validando se os arquivos gerados e
 - Os diversos microsserviços devem ser criados usando Docker, ou seja, deve ser criado um Dockerfile
 - Cada backend deve acessar seu próprio banco de dados. Cada banco de dados deve ser executado em docker.
 - Deve ser habilitado o CORS para redirecionamento aos backends
+- Deve ser configurado o Content Security Policy (CSP) para que o cabeçalho CSP possa incluir todos os domínios necessários
 - Deve ser implementado o Swagger UI em todos os backends
 - As ações CRUDs usando implementadas em cada backend devem suportar as requisições de acordo com a documentação do react-admin usando ra-data-simple-rest.
 - Cada backend deve usar variaveis de ambiente para suas configurações
@@ -113,6 +114,7 @@ Execute cada uma das tarefas a seguir, sempre validando se os arquivos gerados e
 ### 5. Garantir frontend e os backends estão executando e funcionando corretamente
 - Digitando docker ps
 - Pesquisar na pasta do projeto /ecom e verificar se existe algum código que esteja apontando para localhost, e se for encontrado, ajustar para usar variável de ambiente
+- Verificar se as configurações do Swagger UI em cada backend está configurado corretamente para acesso externo e suportando CORS, Content Security Policy (CSP). 
 - Verificar se todos os Backends da solução foram implementados, estão rodando e funcionando
 
 ## Conclusão
