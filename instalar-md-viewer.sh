@@ -1,4 +1,3 @@
-```bash
 #!/bin/bash
 
 set -e
@@ -53,4 +52,3 @@ hash -r
 echo
 echo "✅ Instalação concluída!"
 echo "Execute: md README.md"
-```
